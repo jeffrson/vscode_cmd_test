@@ -1,0 +1,29 @@
+{
+    "version": "2.0.0",
+    "options": { // "linux", "osx"
+        "env": {
+            "PATH": "${workspaceFolder}/node_modules/.bin:${env:PATH}"
+        }
+    },
+    "windows": {
+        "options": {
+            "env": {
+                "PATH": "${workspaceFolder}\\node_modules\\.bin;${env:PATH}"
+            }
+        }
+    },
+	"tasks": [
+        {
+            "args": [
+                "--watch",
+                "-p",
+                "\"${workspaceFolder}/tsconfig.json\""
+            ],
+            "command": "tsc",
+            "label": "TS: Watch",
+            "problemMatcher": "$tsc-watch",
+            "type": "shell",
+            "isBackground": true
+        }
+    ]
+}
